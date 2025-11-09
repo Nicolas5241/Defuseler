@@ -1,0 +1,51 @@
+import { Menu } from "Menu.slint";
+import {
+    ModuleButton,
+    ModuleBinary,
+    ModuleColorCode,
+    ModuleHexadecimal,
+    ModuleKeypad,
+    ModuleMathematics,
+    ModuleMorse,
+    ModuleMultiButtons,
+    ModuleTiles,
+    ModuleTiming,
+    ModuleWires,
+} from "Modules/Casual/index.slint";
+
+enum Pages {
+	Menu,
+	Binary,
+	Button,
+	ColorCode,
+	CountingNeedy,
+	EchoNeedy,
+	Hexadecimal,
+	InterviewNeedy,
+	Keypad,
+	Mathematics,
+	MorseCode,
+	MultiButtons,
+	Tiles,
+	Timing,
+	Wires,
+}
+
+export component App inherits Window {
+	title: "Defuseler";
+
+    out property <Pages> page: Pages.Menu;
+
+	Menu { visible: page == Pages.Menu; }
+	ModuleButton { visible: page == Pages.Button; }
+	ModuleBinary { visible: page == Pages.Binary; }
+	ModuleColorCode { visible: page == Pages.ColorCode; }
+	ModuleHexadecimal { visible: page == Pages.Hexadecimal; }
+	ModuleKeypad { visible: page == Pages.Keypad; }
+	ModuleMathematics { visible: page == Pages.Mathematics; }
+	ModuleMorse { visible: page == Pages.MorseCode; }
+	ModuleMultiButtons { visible: page == Pages.MultiButtons; }
+	ModuleTiles { visible: page == Pages.Tiles; }
+	ModuleTiming { visible: page == Pages.Timing; }
+	ModuleWires { visible: page == Pages.Wires; }
+}
