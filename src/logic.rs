@@ -15,6 +15,7 @@ pub fn start_application() -> Result<(), Box<dyn Error>> {
 
 impl Pages {
 	pub fn from_id(id: i32) -> Self {
+		println!("{}", id);
 		match id {
 			0 => Self::Menu,
 			1 => Self::Button,

@@ -13,7 +13,7 @@ export component ButtonGrid inherits VerticalLayout {
 		for label[col] in label-row: Button {
 			text: label;
 			width: button-width;
-			clicked => { button_pressed(row * col) }
+			clicked => { button_pressed((row) * (labels[0].length) + col + 1) }
 		}
 	}
 }

@@ -38,21 +38,25 @@ export component App inherits Window {
 
 	callback change_to_module_page(int) -> Pages;
 
+	function go_to_menu() {
+		page = Pages.Menu;
+	}
+
 	Menu {
 		visible: page == Pages.Menu;
 		button_pressed(id) => {
 			page = change_to_module_page(id);
 		}
 	}
-	ModuleButton { visible: page == Pages.Button; }
-	ModuleBinary { visible: page == Pages.Binary; }
-	ModuleColorCode { visible: page == Pages.ColorCode; }
-	ModuleHexadecimal { visible: page == Pages.Hexadecimal; }
-	ModuleKeypad { visible: page == Pages.Keypad; }
-	ModuleMathematics { visible: page == Pages.Mathematics; }
-	ModuleMorse { visible: page == Pages.MorseCode; }
-	ModuleMultiButtons { visible: page == Pages.MultiButtons; }
-	ModuleTiles { visible: page == Pages.Tiles; }
-	ModuleTiming { visible: page == Pages.Timing; }
-	ModuleWires { visible: page == Pages.Wires; }
+	ModuleButton { visible: page == Pages.Button; back_pressed => {go_to_menu()} }
+	ModuleBinary { visible: page == Pages.Binary; back_pressed => {go_to_menu()} }
+	ModuleColorCode { visible: page == Pages.ColorCode; back_pressed => {go_to_menu()} }
+	ModuleHexadecimal { visible: page == Pages.Hexadecimal; back_pressed => {go_to_menu()} }
+	ModuleKeypad { visible: page == Pages.Keypad; back_pressed => {go_to_menu()} }
+	ModuleMathematics { visible: page == Pages.Mathematics; back_pressed => {go_to_menu()} }
+	ModuleMorse { visible: page == Pages.MorseCode; back_pressed => {go_to_menu()} }
+	ModuleMultiButtons { visible: page == Pages.MultiButtons; back_pressed => {go_to_menu()} }
+	ModuleTiles { visible: page == Pages.Tiles; back_pressed => {go_to_menu()} }
+	ModuleTiming { visible: page == Pages.Timing; back_pressed => {go_to_menu()} }
+	ModuleWires { visible: page == Pages.Wires; back_pressed => {go_to_menu()} }
 }

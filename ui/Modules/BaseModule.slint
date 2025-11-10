@@ -1,0 +1,33 @@
+import { Button } from "std-widgets.slint";
+export component BaseModule inherits VerticalLayout {
+	spacing: 10px;
+	alignment: space-around;
+
+	in property <string> label;
+	
+	callback back_pressed;
+	callback solve_pressed;
+
+	Text {
+		text: label;
+		font-size: 30px;
+		horizontal-alignment: center;
+	}
+
+	@children
+
+	HorizontalLayout {
+		spacing: 10px;
+		alignment: space-evenly;
+		Button {
+			text: "Solve";
+			width: 200px;
+			clicked => {solve_pressed()}
+		}
+		Button {
+			text: "Back";
+			width: 200px;
+			clicked => {back_pressed()}
+		}
+	}
+}
