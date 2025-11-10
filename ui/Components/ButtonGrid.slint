@@ -1,0 +1,19 @@
+import { Button } from "std-widgets.slint";
+
+export component ButtonGrid inherits VerticalLayout {
+	spacing: 10px;
+
+	in property <[[string]]> labels;
+	in property <length> button-width: 200px;
+
+	callback button_pressed(int);
+	for label-row[row] in labels: HorizontalLayout {
+		alignment: space-around;
+		spacing: 10px;
+		for label[col] in label-row: Button {
+			text: label;
+			width: button-width;
+			clicked => { button_pressed(row * col) }
+		}
+	}
+}

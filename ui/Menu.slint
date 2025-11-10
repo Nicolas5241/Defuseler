@@ -1,3 +1,25 @@
-export component Menu inherits Rectangle {
+import { ButtonGrid } from "Components/ButtonGrid.slint";
+export component Menu inherits VerticalLayout {
+	alignment: space-around;
+	spacing: 10px;
+
+	Text {
+		text: "Defuseler";
+		horizontal-alignment: center;
+		font-size: 40px;
+	}
+
+	ButtonGrid {
+		button-width: 200px;
+		labels: [
+			["Button", "Binary"],
+			["Color Code", "Hexadecimal"],
+			["Keypad", "Mathematics"],
+			["Morse Code", "Multi Buttons"],
+			["Tiles", "Timing"],
+			["Wires", "Counting Needy"],
+			["Echo Needy", "Interview Needy"],
+		];
+	}
 
 }
