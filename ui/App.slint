@@ -13,7 +13,7 @@ import {
     ModuleWires,
 } from "Modules/Casual/index.slint";
 
-enum Pages {
+export enum Pages {
 	Menu,
 	Binary,
 	Button,
@@ -36,7 +36,14 @@ export component App inherits Window {
 
     out property <Pages> page: Pages.Menu;
 
-	Menu { visible: page == Pages.Menu; }
+	callback change_to_module_page(int) -> Pages;
+
+	Menu {
+		visible: page == Pages.Menu;
+		button_pressed(id) => {
+			page = change_to_module_page(id);
+		}
+	}
 	ModuleButton { visible: page == Pages.Button; }
 	ModuleBinary { visible: page == Pages.Binary; }
 	ModuleColorCode { visible: page == Pages.ColorCode; }
