@@ -37,6 +37,33 @@ export component App inherits Window {
     out property <Pages> page: Pages.Menu;
 
 	callback change_to_module_page(int) -> Pages;
+	callback set_module_answer(Pages, [string]);
+
+	set_module_answer(page, values) => {
+		if page == Pages.Button {
+
+		} else if page == Pages.Binary {
+
+		} else if page == Pages.ColorCode {
+
+		} else if page == Pages.Hexadecimal {
+
+		} else if page == Pages.Keypad {
+
+		} else if page == Pages.Mathematics {
+
+		} else if page == Pages.MorseCode {
+
+		} else if page == Pages.MultiButtons {
+
+		} else if page == Pages.Tiles {
+
+		} else if page == Pages.Timing {
+
+		} else if page == Pages.Wires {
+
+		}
+	}
 
 	function go_to_menu() {
 		page = Pages.Menu;
@@ -48,15 +75,15 @@ export component App inherits Window {
 			page = change_to_module_page(id);
 		}
 	}
-	ModuleButton { visible: page == Pages.Button; back_pressed => {go_to_menu()} }
-	ModuleBinary { visible: page == Pages.Binary; back_pressed => {go_to_menu()} }
-	ModuleColorCode { visible: page == Pages.ColorCode; back_pressed => {go_to_menu()} }
-	ModuleHexadecimal { visible: page == Pages.Hexadecimal; back_pressed => {go_to_menu()} }
-	ModuleKeypad { visible: page == Pages.Keypad; back_pressed => {go_to_menu()} }
-	ModuleMathematics { visible: page == Pages.Mathematics; back_pressed => {go_to_menu()} }
-	ModuleMorse { visible: page == Pages.MorseCode; back_pressed => {go_to_menu()} }
-	ModuleMultiButtons { visible: page == Pages.MultiButtons; back_pressed => {go_to_menu()} }
-	ModuleTiles { visible: page == Pages.Tiles; back_pressed => {go_to_menu()} }
-	ModuleTiming { visible: page == Pages.Timing; back_pressed => {go_to_menu()} }
-	ModuleWires { visible: page == Pages.Wires; back_pressed => {go_to_menu()} }
+	button := ModuleButton { visible: page == Pages.Button; back_pressed => {go_to_menu()} }
+	binary := ModuleBinary { visible: page == Pages.Binary; back_pressed => {go_to_menu()} }
+	colorcode := ModuleColorCode { visible: page == Pages.ColorCode; back_pressed => {go_to_menu()} }
+	hex := ModuleHexadecimal { visible: page == Pages.Hexadecimal; back_pressed => {go_to_menu()} }
+	keypad := ModuleKeypad { visible: page == Pages.Keypad; back_pressed => {go_to_menu()} }
+	math := ModuleMathematics { visible: page == Pages.Mathematics; back_pressed => {go_to_menu()} }
+	morse := ModuleMorse { visible: page == Pages.MorseCode; back_pressed => {go_to_menu()} }
+	multibuttons := ModuleMultiButtons { visible: page == Pages.MultiButtons; back_pressed => {go_to_menu()} }
+	tiles := ModuleTiles { visible: page == Pages.Tiles; back_pressed => {go_to_menu()} }
+	timing := ModuleTiming { visible: page == Pages.Timing; back_pressed => {go_to_menu()} }
+	wires := ModuleWires { visible: page == Pages.Wires; back_pressed => {go_to_menu()} }
 }
