@@ -1,4 +1,4 @@
-use slint::{SharedString, Weak};
+use slint::{Model, ModelRc, SharedString, VecModel, Weak};
 use crate::{logic::App, types::{ButtonText, Color}};
 
 pub fn solve(ui_handle: Weak<App>, color: Color, text: ButtonText) {
@@ -21,7 +21,7 @@ pub fn solve(ui_handle: Weak<App>, color: Color, text: ButtonText) {
 	}
 
 	if press_times.is_none() {
-		//TODO: implement thing to add error message or smth clear the thing
+		ui.invoke_set_module_answer(crate::logic::Pages::Button, todo!());
 		return;
 	}
 

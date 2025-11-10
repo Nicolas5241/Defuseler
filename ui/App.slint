@@ -41,27 +41,27 @@ export component App inherits Window {
 
 	set_module_answer(page, values) => {
 		if page == Pages.Button {
-
+			button.set_answer(values);
 		} else if page == Pages.Binary {
-
+			binary.set_answer(values);
 		} else if page == Pages.ColorCode {
-
+			colorcode.set_answer(values);
 		} else if page == Pages.Hexadecimal {
-
+			hex.set_answer(values);
 		} else if page == Pages.Keypad {
-
+			keypad.set_answer(values);
 		} else if page == Pages.Mathematics {
-
+			math.set_answer(values);
 		} else if page == Pages.MorseCode {
-
+			morse.set_answer(values);
 		} else if page == Pages.MultiButtons {
-
+			multibuttons.set_answer(values);
 		} else if page == Pages.Tiles {
-
+			tiles.set_answer(values);
 		} else if page == Pages.Timing {
-
+			timing.set_answer(values);
 		} else if page == Pages.Wires {
-
+			wires.set_answer(values);
 		}
 	}
 
